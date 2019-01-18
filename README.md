@@ -1,21 +1,57 @@
-# mall
+幕客网vue商城开发笔记
 
-> vue商城
+一、使用的技术知识：
+a)Vue                     使用框架
+b)Vue-router               路由
+c)Vue-awesome-swiper     幻灯片
+d)Vue-lazyload             懒加载
+e)Axios                    ajacx 数据交互
+f)Jsonp                   
+g)Fastclick                 消除三百毫秒延时
+h)Babel-polyfill             ES6 兼容ES5
+i)Webpack                打包工具
 
-## Build Setup
+二、项目开发
+a)安装node  检测node -v
+b)Cnpm 安装： npm install -g cnpm 淘宝镜像文件
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
-``` bash
-# install dependencies
-npm install
+备注：安装cnpm 出现错误，一般是权限不足，使用sudo解决
 
-# serve with hot reload at localhost:8080
-npm run dev
+C)  安装vue-cil 脚手架 
+Cnpm install -g vue-cli    检测：vue -h
 
-# build for production with minification
-npm run build
+D)  建立项目  
+Vue init webpack ProjectName
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+E)  运行vue
+Cd xxxx   进入项目文件
+Npm run dev
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+F)  手机链接vue项目文件
+Mall--> config--> index.js
+设置IP地址为0.0.0.0
+通过ipconfig 查看本机ip，添加端口手机端开始访问
+
+三、安装插件
+a)cnpm install --save babel-polyfill fastclick      ES5兼容插件、300毫秒延时
+b)cnpm install --save-dev node-sass sass-loader   SCSS运行插件
+
+四、路由的重定向
+{
+    path: '*',
+    redirect: '/home'
+  }
+
+五、路由的懒加载
+{
+    name: 'Personal',
+    path: '/personal',
+    component: () => import('pages/personal')
+  },
+
+
+
+
+
+
