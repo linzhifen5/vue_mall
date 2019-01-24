@@ -1,17 +1,33 @@
 <template>
-    <div>
-      Home
-      <router-view></router-view>
-    </div>
+  <div class="home">
+    <header class="g-header-container">
+      <home-header/>
+    </header>
+    <div></div>
+    <div class="g-backtop-container"></div>
+    <router-view></router-view>
+  </div>
 
 </template>
 
 <script>
-    export default {
-        name: "Home"
+  import HomeHeader from './header';
+
+  export default {
+    name: "Home",
+    components: {
+      HomeHeader
     }
+  }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "~assets/scss/mixins";
 
+  .home {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $bgc-theme;
+  }
 </style>
