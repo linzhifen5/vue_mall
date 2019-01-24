@@ -1,13 +1,18 @@
 <template>
-    <div>
-      header
-    </div>
+  <div>
+    <me-navbar></me-navbar>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "HomeHeader",
+  import MeNavbar from 'base/navbar';
+
+  export default {
+    name: "HomeHeader",
+    components:{
+      MeNavbar
     }
+  }
 </script>
 
 <style scoped>
