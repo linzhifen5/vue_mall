@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <me-navbar></me-navbar>
-  </div>
+    <me-navbar class="header">
+      <i class="iconfont icon-scan" slot="left"></i>
+      <div slot="center">搜索框</div>
+      <i class="iconfont icon-msg" slot="right"></i>
+    </me-navbar>
 </template>
 
 <script>
-  import MeNavbar from 'base/navbar';
+  import MeNavbar from 'base/navbar/index';
 
   export default {
     name: "HomeHeader",
