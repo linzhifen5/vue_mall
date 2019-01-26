@@ -7,7 +7,6 @@
     <div class="g-backtop-container"></div>
     <router-view></router-view>
   </div>
-
 </template>
 
 <script>
