@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  import MeSlider from 'base/slider';
   import {swiper, swiperSlide} from 'vue-awesome-swiper';
 
   export default {
@@ -18,11 +19,11 @@
       direction: {
         type: String,
         default: 'horizontal',
-        validator() {
+        validator(value) {
           return [
             'horizontal',
             'vertical'
-          ].indexof(value) > -1
+          ].indexof(value) > -1;
         }
       },
       interval: {
@@ -46,7 +47,7 @@
         swiperOption: {
           watchOverflow: true,
           direction: this.direction,
-          autopalay: this.interval ? {
+          autoplay: this.interval ? {
             delay: this.interval,
             disableOnInteraction: false
           } : false,
@@ -58,10 +59,13 @@
         }
       }
     }
-
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .swiper-container{
+    width: 100%;
+    height: 100%;
+  }
 
 </style>

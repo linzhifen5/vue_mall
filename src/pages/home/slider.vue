@@ -1,22 +1,76 @@
 <template>
-  <me-slider>
-
-  </me-slider>
+  <div class="slider-wrapper">
+    <me-slider
+      :direction="direction"
+      :loop="loop"
+      :interval="interval"
+      :pagination="pagination"
+    >
+      <swiper-slide
+        v-for="(item,index) in sliders"
+        :key="index"
+      >
+        <a :href="item.linkUrl" class="slider-link">
+          <img :src="item.picUrl" alt="" class="slider-img">
+        </a>
+      </swiper-slide>
+    </me-slider>
+  </div>
 </template>
 
 <script>
   import MeSlider from 'base/slider';
   import {swiperSlide} from 'vue-awesome-swiper';
+  import {sldierOptions} from "./config";
 
   export default {
-    name: "slider",
+    name: "HomeSlider",
     components: {
-      swiperSlide
+      swiperSlide,
+      MeSlider
+    },
+    data() {
+      return {
+        direction: sldierOptions.direction,
+        loop: sldierOptions.loop,
+        interval: sldierOptions.interval,
+        pagination: sldierOptions.pagination,
+        sliders: [
+          {
+            'linkUrl': 'https://www.imooc.com',
+            'picUrl': require('./1.jpg')
+          },
+          {
+            'linkUrl': 'https://www.imooc.com',
+            'picUrl': require('./2.jpg')
+          },
+          {
+            'linkUrl': 'https://www.imooc.com',
+            'picUrl': require('./3.jpg')
+          },
+          {
+            'linkUrl': 'https://www.imooc.com',
+            'picUrl': require('./4.jpg')
+          }
+        ]
+      }
     }
   }
 </script>
 
 <style scoped>
+  .slider-wrapper {
+    height: 183px;
+  }
 
+  .slider-link {
+    display: block;
+  }
+
+  .slider-link,
+  .slider-img {
+    width: 100%;
+    height: 100%;
+  }
 
 </style>
