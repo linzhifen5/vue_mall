@@ -22,7 +22,8 @@
 
   .header{
     &.mine-navbar{
-       background-color: rgba(0, 0, 0, 0.1);
+       /*background-color: transparent;*/
+      background-color: rgba(0,0,0,0.1);
      }
   }
 </style>
