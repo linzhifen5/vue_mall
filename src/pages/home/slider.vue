@@ -21,7 +21,8 @@
 <script>
   import MeSlider from 'base/slider';
   import {swiperSlide} from 'vue-awesome-swiper';
-  import {sliderOptions} from "./config";
+  import {sliderOptions} from './config';
+  import {getHomeSlider} from '../../api/home';
 
   export default {
     name: "HomeSlider",
@@ -54,6 +55,9 @@
           }
         ]
       }
+    },
+    created(){
+      getHomeSlider();
     }
   }
 </script>
