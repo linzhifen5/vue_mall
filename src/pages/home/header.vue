@@ -1,7 +1,7 @@
 <template>
-    <me-navbar class="header" title="titlejdfjsdjfijfijidjfjsdfjisdjijsdijfis">
-      <!--<i class="iconfont icon-scan" slot="left"></i>-->
-      <!--<div slot="center">搜索框</div>-->
+    <me-navbar class="header" title="">
+      <i class="iconfont icon-scan" slot="left"></i>
+      <div slot="center">搜索框</div>
       <i class="iconfont icon-msg" slot="right"></i>
     </me-navbar>
 </template>
@@ -17,8 +17,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "~assets/scss/mixins";
+
   .header{
-    background: white;
+    &.mine-navbar{
+       background-color: rgba(0, 0, 0, 0.1);
+     }
   }
 </style>

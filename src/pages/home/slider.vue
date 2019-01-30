@@ -21,7 +21,7 @@
 <script>
   import MeSlider from 'base/slider';
   import {swiperSlide} from 'vue-awesome-swiper';
-  import {sldierOptions} from "./config";
+  import {sliderOptions} from "./config";
 
   export default {
     name: "HomeSlider",
@@ -31,10 +31,10 @@
     },
     data() {
       return {
-        direction: sldierOptions.direction,
-        loop: sldierOptions.loop,
-        interval: sldierOptions.interval,
-        pagination: sldierOptions.pagination,
+        direction: sliderOptions.direction,
+        loop: sliderOptions.loop,
+        interval: sliderOptions.interval,
+        pagination: sliderOptions.pagination,
         sliders: [
           {
             'linkUrl': 'https://www.imooc.com',

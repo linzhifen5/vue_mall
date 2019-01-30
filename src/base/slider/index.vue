@@ -23,7 +23,7 @@
           return [
             'horizontal',
             'vertical'
-          ].indexof(value) > -1;
+          ].indexOf(value) > -1;
         }
       },
       interval: {
