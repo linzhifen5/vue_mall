@@ -24,6 +24,7 @@
     &.mine-navbar{
        /*background-color: transparent;*/
       background-color: rgba(0,0,0,0.1);
+      color: white;
      }
   }
 </style>
