@@ -50,6 +50,12 @@ b)cnpm install --save-dev node-sass sass-loader   SCSS运行插件
     component: () => import('pages/personal')
   },
 
+2019/01/31 
+轮播图可以添加上一个加载数据的界面，防止轮播图异常
+添加页面：slider.vue if数据处
+
+
+
 
 
 
