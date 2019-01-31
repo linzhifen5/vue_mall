@@ -1,10 +1,10 @@
 import axios from 'axios'
-import {SUCC_CODE} from "./config";
+import {SUCC_CODE,TIMEOUT} from "./config";
 
 //获取幻灯片数据
 export const getHomeSlider = () => {
   return axios.get('http://www.imooc.com/api/home/slider', {
-    timeout: 10000
+    timeout: TIMEOUT
   }).then(res => {
     // console.log(res);
     if (res.data.code === SUCC_CODE) {
@@ -23,5 +23,11 @@ export const getHomeSlider = () => {
         picUrl: require('assets/img/404.png')
       }
     ]
+  }).then(data => {  // 异步执行，then()前面的方法执行以后才执行then里面的方法，加载的时候使用
+    return new Promise(resolve => {
+      setTimeout(()=> {
+        resolve(data);
+      },1000);
+    })
   })
 };
