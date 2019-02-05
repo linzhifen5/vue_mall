@@ -1,6 +1,6 @@
 import axios from 'axios'
-import {SUCC_CODE, TIMEOUT} from "./config";
 import jsonp from "../assets/js/jsonp";
+import {jsonpOptions, SUCC_CODE, TIMEOUT, HOME_RECOMMEND_PAGE_SIZE} from "./config";
 
 //获取幻灯片数据
 export const getHomeSlider = () => {
@@ -34,7 +34,7 @@ export const getHomeSlider = () => {
 };
 
 // 获取热门推荐数据--jsonp
-export const getHomeRecommend = (page = 1, psize = 20) => {
+export const getHomeRecommend = (page = 1, psize = HOME_RECOMMEND_PAGE_SIZE) => {
   const url = 'https://ju.taobao.com/json/tg/ajaxGetItemsV2.json';
   const params = {
     page,
@@ -43,9 +43,21 @@ export const getHomeRecommend = (page = 1, psize = 20) => {
     forntCatId: ''
   }
 
-  return jsonp(url, params, {
-    param: 'callback'
-  }).then(res =>{
-    console.log(res)
+  return jsonp(url, params, jsonpOptions).then(res =>{
+    if(res.code === '200'){
+      return res;
+    }
+
+    throw new Error('没有获取数据')
+  }).catch(err => {
+    if(err){
+      console.log(err);
+    }
+  }).then(data => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(data);
+      },1000)
+    })
   })
 }
