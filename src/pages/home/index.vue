@@ -6,6 +6,7 @@
     <me-scroll>
       <home-slider/>
       <home-nav/>
+      <home-recommend/>
     </me-scroll>
     <div class="g-backtop-container"></div>
     <router-view></router-view>
@@ -18,6 +19,7 @@
   import MeSlider from "../../base/slider/index";
   import MeScroll from "../../base/scroll/index";
   import HomeNav from "./nav";
+  import HomeRecommend from "./recommend";
 
   export default {
     name: "Home",
@@ -26,7 +28,8 @@
       MeSlider,
       HomeHeader,
       HomeSlider,
-      HomeNav
+      HomeNav,
+      HomeRecommend,
     }
   }
 </script>

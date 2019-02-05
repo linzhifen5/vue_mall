@@ -55,6 +55,18 @@ b)cnpm install --save-dev node-sass sass-loader   SCSS运行插件
 添加页面：slider.vue if数据处
 
 
+2019-2-5
+推荐插件开发
+
+1.安装jsonp库   cnpm install --save jsonp
+
+2.jsonp 封装
+
+
+
+
+
+
 
 
 
