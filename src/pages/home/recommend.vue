@@ -99,6 +99,7 @@
       position: relative;
       width: 100%;
       padding-top: 100%; /* padding-top 的高是相对于width 的。 */
+      margin-bottom: 5px;
     }
 
     &-img {
@@ -108,6 +109,38 @@
       width: 100%;
       height: 100%;
     }
+
+    &-name{
+      height: 36px;
+      padding:0 5px;
+      margin-bottom: 8px;
+      @include multiline-ellipsis();
+    }
+
+    &-origPrice{
+      padding: 0 5px;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    &-info{
+      @include flex-between();
+      padding: 0 5px;
+      margin-bottom: 8px;
+    }
+
+    &-price{
+      color: #e61414;
+    }
+
+    &-price-num{
+      font-size: 20px;
+    }
+
+    &-count{
+      color: #999;
+    }
+
 
   }
 

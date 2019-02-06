@@ -60,9 +60,19 @@ b)cnpm install --save-dev node-sass sass-loader   SCSS运行插件
 
 1.安装jsonp库   cnpm install --save jsonp
 
+
 2.jsonp 封装
 
 
+3.list 推荐div布局
+
+  /* 实现div内部图片位一个正方形显示技巧 */
+    &-pic { /* 图片父元素 */
+      position: relative;
+      width: 100%;
+      padding-top: 100%; /* padding-top 的高是相对于width 的。 */
+      margin-bottom: 5px;
+    }
 
 
 
