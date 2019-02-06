@@ -17,7 +17,6 @@
             <span class="recommend-price">￥<strong class="recommend-price-num">1212</strong></span>
             <span class="recommend-count">{{item.remind.soldCount}} 件已售 </span>
           </p>
-          <p class="recommend-pic"><img src="" alt=""></p>
         </router-link>
       </li>
     </ul>
