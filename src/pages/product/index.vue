@@ -1,17 +1,17 @@
 <template>
-    <div class="product">prodoct</div>
+  <div class="product">prodoct</div>
 </template>
 
 <script>
-    export default {
-        name: "Product"
-    }
+  export default {
+    name: "Product"
+  }
 </script>
 
 <style lang="scss" scoped>
   @import "~assets/scss/mixins";
 
-  .product{
+  .product {
     overflow: hidden;
     position: absolute;
     top: 0;

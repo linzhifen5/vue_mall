@@ -1,7 +1,11 @@
 <template>
   <div class="recommend">
     <h3 class="recommend-title">热卖推荐</h3>
-    <ul class="recommend-list">
+    <!-- Loading -->
+    <div class="loading-container" v-if="!recommends.length">
+      <me-loading inline />
+    </div>
+    <ul class="recommend-list" v-else>
       <li class="recommend-item" v-for="(item,index) in recommends" :key="index">
         <router-link class="recommend-link" :to="{name:'home-product', params:{id: item.baseinfo.itemId}}">
           <p class="recommend-pic"><img class="recommend-img" :src="item.baseinfo.picUrl" alt=""></p>
@@ -22,9 +26,13 @@
 
 <script>
   import {getHomeRecommend} from "api/home";
+  import MeLoading from 'base/loading';
 
   export default {
     name: "HomeRecommend",
+    components:{
+      MeLoading
+    },
     data() {
       return {
         recommends: [],
@@ -140,8 +148,10 @@
     &-count{
       color: #999;
     }
+  }
 
-
+  .loading-container{
+    padding-top: 100px;
   }
 
 
