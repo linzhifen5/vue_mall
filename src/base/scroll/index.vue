@@ -20,6 +20,9 @@
       scrollbar: {
         type: Boolean,
         default: true,
+      },
+      data: {
+        type: [Array, Object]
       }
     },
     data() {
@@ -34,6 +37,16 @@
             hide: true
           }
         }
+      }
+    },
+    watch: {
+      data() {
+        this.update();
+      }
+    },
+    methods:{
+      update(){
+        this.$refs.swiper && this.$refs.swiper.swiper.update()
       }
     }
   }

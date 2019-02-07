@@ -52,6 +52,7 @@
             this.curPage++;
             this.totalPage = data.totalPage;
             this.recommends = this.recommends.concat(data.itemList);
+            this.$emit('loaded',this.recommends);  // 子组件设置事件，父组件接收事件
           }
         });
       }
