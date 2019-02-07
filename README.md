@@ -75,6 +75,11 @@ b)cnpm install --save-dev node-sass sass-loader   SCSS运行插件
     }
 
 
+4.图片的懒加载插件
+
+  cnpm install --save vue-lazyload
+
+
 
 
 
