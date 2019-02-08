@@ -1,5 +1,5 @@
 <template>
-  <swiper :options="swiperOption">
+  <swiper :options="swiperOption" ref="swiper">
     <div class="mine-scroll-pull-down" v-if="pullDown">
       <me-loading :text="pullDownText" inline></me-loading>
     </div>
@@ -13,6 +13,14 @@
 <script>
   import {swiper, swiperSlide} from 'vue-awesome-swiper';
   import MeLoading from 'base/loading';
+  import {
+    PULL_DOWN_HEIGHT,
+    PULL_DOWN_TEXT_INIT,
+    PULL_DOWN_TEXT_END,
+    PULL_DOWN_TEXT_ING,
+    PULL_DOWN_TEXT_START,
+    PULL_DOWN_HEIGHI
+  }from './config'
 
   export default {
     name: "MeScroll",
@@ -29,14 +37,14 @@
       data: {
         type: [Array, Object]
       },
-      pullDown:{
+      pullDown: {
         type: Boolean,
         default: false,
       }
     },
     data() {
       return {
-        pullDownText:'继续下拉，刷新页面……',
+        pullDownText: '继续下拉，刷新页面……',
         swiperOption: {
           direction: 'vertical',
           slidesPerView: 'auto',
@@ -45,6 +53,9 @@
           scrollbar: {
             el: this.scrollbar ? '.swiper-scrollbar' : null,
             hide: true
+          },
+          on: {  // swiper 内置函数
+            sliderMove: this.scroll
           }
         }
       }
@@ -54,9 +65,19 @@
         this.update();
       }
     },
-    methods:{
-      update(){
+    methods: {
+      update() {
         this.$refs.swiper && this.$refs.swiper.swiper.update()
+      },
+
+      scroll(){
+        const swiper = this.$refs.swiper.swiper;
+
+        if(swiper.translate > 0){  // 假如已经进行了下拉操作
+          if(swiper.translate > PULL_DOWN_HEIGHI){
+            this.pullDownText = '111111'
+          }
+        }
       }
     }
   }
@@ -73,7 +94,7 @@
     height: auto;
   }
 
-  .mine-scroll-pull-down{
+  .mine-scroll-pull-down {
     position: absolute;
     left: 0;
     bottom: 100%;
